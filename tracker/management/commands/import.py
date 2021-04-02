@@ -21,7 +21,7 @@ class Command(BaseCommand):
             squirrels.append(Squirrel(
                 latitude=dict_['X'],
                 longtitude = dict_['Y'],
-                ID = dict_['Unique Squirrel ID'],
+                unique_id = dict_['Unique Squirrel ID'],
                 shift = dict_['Shift'],
                 date =datetime.date(int(dict_['Date'][5:8]),int(dict_['Date'][0:2]),int(dict_['Date'][2:4])),
                 age = dict_['Age'],
