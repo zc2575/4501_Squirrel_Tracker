@@ -6,7 +6,6 @@ from .models import Squirrel
 from .forms import Squirrelform
 
 
-
 def showmap(request):
     sightings = Squirrel.objects.all()
     context = {

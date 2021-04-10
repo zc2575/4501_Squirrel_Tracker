@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class TrackerConfig(AppConfig):
+class SightingsConfig(AppConfig):
     name = 'sightings'
