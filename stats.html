@@ -71,37 +71,6 @@
 		<br>
 		<br>
                 <div>
-			<table class='table' id="color_table"  style="width: 700px">
-				<div class="alert alert-info text-center" style="width: 700px" role="alert">
-                                        <h5><strong> Counts of squirrels in different colors </strong></h5>
-                                </div>
-                                <thead class="thead-dark">
-                                         <tr>
-                                                 <th scope='col'></th>
-                                                 <th scope='col'>Black</th>
-                                                 <th scope='col'>Gray</th>
-                                                 <th scope='col'>Cinnamon</th>
-                                         </tr>
-                                 </thead>
-                                 <tbody>
-                                         <tr>
-                                                 <th>Primary fur color</th>
-                                                 <td>{{context.Primary_Fur_Color.Black}}</td>
-                                                 <td>{{context.Primary_Fur_Color.Gray}}</td>
-                                                 <td>{{context.Primary_Fur_Color.Cinnamon}}</td>
-                                         </tr>
-                                         <tr>
-                                                 <th>percentage %</th>
-                                                 <td>{{context.Primary_Fur_Color_pct.Black}}</td>
-                                                 <td>{{context.Primary_Fur_Color_pct.Gray}}</td>
-                                                 <td>{{context.Primary_Fur_Color_pct.Cinnamon}}</td>
-                                         </tr>
-                                 </tbody>
-                         </table>
-                </div>
-		<br>
-		<br>
-                <div>
                          <table class='table' id="location_table" style="width: 700px">
 				 <div class="alert alert-warning text-center" style="width: 700px" role="alert">
                                         <h5><strong> Counts of squirrels in different locations </strong></h5>
@@ -146,7 +115,14 @@
 			 </table>
                 </div>
 		<br>
+      		<br>
+      		<li>Latitiude：The minimum latitude is {{lattitude.minimum}}</li>
+      		<li>Latitiude：The Maxiimum latitude is {{lattitude.maximum}}</li>
+      		<br>
+		<li>Longitude：The minimum longitude is {{longitude.minimum}}</li>
+      		<li>Longitude：The maximum longitude is {{longitude.maximum}}</li>
+      		<br>
+      		<li>Primary_fur_color: {{primary_fur_color}}</li></ul>
 		<br>
-		</div>
-        </body>
+	</body>
 </html>
