@@ -63,6 +63,7 @@ def stats(request):
     lattitude = squirrels.aggregate(minimum=Min('Latitude'),maximum=Max('Latitude'))
     longitude = squirrels.aggregate(minimum=Min('Longitude'),maximum=Max('Longitude'))
     running = Squirrels.objects.filter(running=True).count()
+    not_running = Squirrels.objects.filter(running=False).count()
 
     context = {'total': total,
                 'adult':adult,
@@ -76,6 +77,7 @@ def stats(request):
 		'longitude': longitude,
 		'primary_fur_color': primary_fur_color,
 		'running': running,
+                'not_running': not_running,
 		}
     return render(request, 'sightings/stats.html', context)
 
