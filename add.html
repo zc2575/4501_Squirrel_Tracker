@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+        <head>
+                <title>Squirrel Tracker: Add a Squirrel Sight</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        </head>
+        <body>
+<style>body{padding-left:10px; padding-right:10px;}</style>
+		<p>
+		<br>
+		<strong><h2><img src="https://www.kindpng.com/picc/m/610-6100552_squirrel-portable-network-graphics-vector-graphics-squirrel-illustration.png" style="width:60px" class="rounded" alt="..." >   Did you see a new Sqiurrel?    <img src="https://www.kindpng.com/picc/m/610-6100552_squirrel-portable-network-graphics-vector-graphics-squirrel-illustration.png" style="width:60px" class="rounded" alt="..." ></strong>
+		</h2>
+		<p>Please fill out the following information to share it with us :)</p>
+		<hr>
+		<br>
+                <form method='post'>
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <br>
+			<p>Thanks for sharing! <img src="https://thumbs.dreamstime.com/b/isolated-chestnut-cartoon-image-representing-nice-version-anidea-can-be-used-projects-around-fruit-42476690.jpg" style="width:30px" class="rounded" alt="..." ></p>
+                        <input type="submit" name="add">
+			<br>
+                </form>
+		<br>	
+	</body>
+</html>
