@@ -8,12 +8,6 @@ from django.db.models import Avg, Max, Min, Count
 from .models import Squirrel
 from .forms import SquirrelForm
 
-def showmap(request):
-    sightings = Squirrels.objects.all()
-    context = {
-        'sightings': sightings
-    }
-    return render(request, 'map/map.html', context)
 
 def all_squirrels(request):
     squirrel_list = Squirrels.objects.all()
