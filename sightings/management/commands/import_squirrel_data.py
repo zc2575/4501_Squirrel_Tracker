@@ -19,8 +19,8 @@ class Command(BaseCommand):
         squirrels = []
         for row in data:
             squirrels.append(Squirrel(
-                latitude=float(row['X']),
-                longitude =float(row['Y']),
+                latitude=float(row['Y']),
+                longitude =float(row['X']),
                 unique_id = row['Unique Squirrel ID'],
                 shift = row['Shift'],
                 date =datetime.date(int(row['Date'][4:8]),int(row['Date'][0:2]),int(row['Date'][2:4])),
