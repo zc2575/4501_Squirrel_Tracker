@@ -6,7 +6,8 @@ Our Web App **Squirrel_Tracker** is a simple tool that utilizes **Django** web d
 ## Group Name
 - Project Group 5
 
-## UNI of Team Members
-- UNIs: [zc2575, rz2476]
+## Team Members
+- Xinyu Shao, Zhixin Chen
+- UNIs: [xs2403, zc2575]
 
 ## Link to the Server Running the Application
