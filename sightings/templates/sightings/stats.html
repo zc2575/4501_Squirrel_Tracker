@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Squirrel Tracker: Statistics Overview </title> 
+		<title>Squirrel Tracker: Statistics Overview </title>
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         </head>
         <body>
@@ -17,15 +17,16 @@
 		<hr>
 		<ul>
 			<br>
-			<li>There are <strong>{{context.total}}</strong> sightings in our records.</li>
+			<li>There are <strong>{{total}}</strong> sightings in our records.</li>
 		<br>
 		</ul>
 		</p>
+        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
 		<br>
 		<br>
                 <div>
                         <table class='table' id="shift_table" style="width: 700px">
-				<div class="alert alert-danger text-center" style="width: 700px" role="alert">
+				<div class="alert alert-primary text-center" style="width: 700px" role="alert">
 					<h5><strong> Counts of squirrel sightings in each shift </strong></h5>
                                 </div>
                                 <thead class="thead-dark">
@@ -38,9 +39,9 @@
                                  <tbody>
                                          <tr>
                                                  <th>Shift</th>
-                                                 <td>{{context.am}}</td>
-                                                 <td>{{context.pm}}</td>
-                                         </tr>   
+                                                 <td>{{am}}</td>
+                                                 <td>{{pm}}</td>
+                                         </tr>
 				 </tbody>
                          </table>
                 </div>
@@ -48,7 +49,7 @@
 		<br>
                 <div>
                          <table class="table" id="age_table" style="width: 700px">
-				 <div class="alert alert-success text-center" style="width: 700px" role="alert">
+				 <div class="alert alert-primary text-center" style="width: 700px" role="alert">
                                         <h5><strong> Counts of juvenile and adult squirrels </strong></h5>
                                 </div>
 				 <thead class="thead-dark">
@@ -61,17 +62,42 @@
                                  <tbody>
                                          <tr>
                                                  <th>Age</th>
-                                                 <td>{{context.juvenile}}</td>
-                                                 <td>{{context.adult}}</td>
+                                                 <td>{{juvenile}}</td>
+                                                 <td>{{adult}}</td>
                                          </tr>
                                  </tbody>
                          </table>
                 </div>
 		<br>
 		<br>
+		<div>
+                         <table class="table" id="color_table" style="width: 700px">
+                                 <div class="alert alert-primary text-center" style="width: 700px" role="alert">
+                                        <h5><strong> Counts of squirrels by primary fur color </strong></h5>
+                                </div>
+                                 <thead class="thead-dark">
+                                         <tr>
+                                                 <th scope='col'></th>
+                                                 <th scope='col'>Black</th>
+                                                 <th scope='col'>Cinnamon</th>
+						 <th scope='col'>Gray</th>
+                                         </tr>
+                                         </thead>
+                                 <tbody>
+                                         <tr>
+                                                 <th>Color</th>
+                                                 <td>{{black}}</td>
+                                                 <td>{{cinnamon}}</td>
+						 <td>{{gray}}</td>
+                                         </tr>
+                                 </tbody>
+                         </table>
+                </div>
+                <br>
+                <br>
                 <div>
                          <table class='table' id="location_table" style="width: 700px">
-				 <div class="alert alert-warning text-center" style="width: 700px" role="alert">
+				 <div class="alert alert-primary text-center" style="width: 700px" role="alert">
                                         <h5><strong> Counts of squirrels in different locations </strong></h5>
                                 </div>
 				 <thead class="thead-dark">
@@ -84,8 +110,8 @@
                                  <tbody>
                                          <tr>
                                                  <th>Location</th>
-                                                 <td>{{context.location_above}}</td>
-                                                 <td>{{context.location_plane}}</td>
+                                                 <td>{{location_above}}</td>
+                                                 <td>{{location_plane}}</td>
                                          </tr>
                                  </tbody>
                          </table>
@@ -107,21 +133,59 @@
 				 <tbody>
 					 <tr>
 						 <th>Run from people</th>
-						 <td>{{context.running}}</td>
-						 <td>{{context.not_running}}</td>
+						 <td>{{running}}</td>
+						 <td>{{not_running}}</td>
 					 <tr>
 				 </tbody>
 			 </table>
                 </div>
 		<br>
       		<br>
-      		<li>Latitiude：The minimum latitude is {{lattitude.minimum}}</li>
-      		<li>Latitiude：The Maxiimum latitude is {{lattitude.maximum}}</li>
+		<div>
+                        <table class='table' id="latitude_table" style="width: 700px">
+                                <div class="alert alert-primary text-center" style="width: 700px" role="alert">
+                                        <h5><strong> Latitude of sightings </strong></h5>
+                                </div>
+                                <thead class="thead-dark">
+                                         <tr>
+                                                 <th scope='col'></th>
+						 <th scope='col'>Minimum</th>
+                                                 <th scope='col'>Maximum</th>
+                                         </tr>
+                                 </thead>
+                                 <tbody>
+                                         <tr>
+                                                 <th>Latitude</th>
+						 <td>{{latitude.minimum}}</td>
+                                                 <td>{{latitude.maximum}}</td>
+                                         <tr>
+                                 </tbody>
+                         </table>
+                </div>
+		<br>
+		<br>
+		<div>
+                        <table class='table' id="longitude_table" style="width: 700px">
+                                <div class="alert alert-primary text-center" style="width: 700px" role="alert">
+                                        <h5><strong> Longitude of sightings </strong></h5>
+                                </div>
+                                <thead class="thead-dark">
+                                         <tr>
+                                                 <th scope='col'></th>
+                                                 <th scope='col'>Minimum</th>
+                                                 <th scope='col'>Maximum</th>
+                                         </tr>
+                                 </thead>
+                                 <tbody>
+                                         <tr>
+                                                 <th>Longitude</th>
+                                                 <td>{{longitude.minimum}}</td>
+                                                 <td>{{longitude.maximum}}</td>
+                                         <tr>
+                                 </tbody>
+                         </table>
+                </div>
       		<br>
-		<li>Longitude：The minimum longitude is {{longitude.minimum}}</li>
-      		<li>Longitude：The maximum longitude is {{longitude.maximum}}</li>
-      		<br>
-      		<li>Primary_fur_color: {{primary_fur_color}}</li></ul>
 		<br>
 	</body>
 </html>

@@ -1,116 +1,159 @@
 from django.db import models
 from django.utils.translation import gettext as _
 
+
+# Create your models here.
+
 class Squirrel(models.Model):
-
-    Longitude = models.FloatField(
-    )
-
-    Latitude = models.FloatField(
-    )
-
-    Unique_Squirrel_ID = models.CharField(
-    max_length=100,
-    )
-
-    PM='PM'
-    AM='AM'
-
-    Shift_CHOICES=( (PM,'PM'),
-    (AM,'AM'),
-     )
-
-    Shift = models.CharField(
-    max_length=2,
-    choices=Shift_CHOICES,
-    )
-
-
-    Date = models.DateField(
-    )
-
-    Adult='Adult'
-    Juvenile='Juvenile'
-    Other='Other'
-
-    Age_CHOICES=( (Adult,'Adult'),
-    (Juvenile,'Juvenile'),
-    (Other,'Other')
-     )
-
-    Age = models.CharField(
-    max_length=20,
-    choices=Age_CHOICES,
-    default=Other,
-    )
-
-    Gray='Gray'
-    Cinnamon='Cinnamon'
-    Black='Black'
-    Other='Other'
-
-    Primary_Fur_Color_CHOICES=( (Gray,'Gray'),
-    (Cinnamon,'Cinnamon'),
-    (Black,'Black'),
-    (Other,'Other')
-    )
-
-    Primary_Fur_Color = models.CharField(
-    max_length=100,
-    choices=Primary_Fur_Color_CHOICES,
-    default=Other,
-    )
-
-    Ground_Plane='Ground_Plane'
-    Above_Ground='Above_Ground'
-    Other='Other'
-
-    Location_CHOICES=( (Ground_Plane,'Ground_Plane'),
-    (Above_Ground,'Above_Ground'),
-    (Other,'Other')
-     )
-
-    Location = models.CharField(
-    max_length=100,
-    choices=Location_CHOICES,
-    default=Other,
-    )
-
-    Specific_Location= models.CharField(
-    max_length=100,
-    )
-
-    Running = models.NullBooleanField()
-
-    Chasing = models.NullBooleanField()
-
-    Climbing = models.NullBooleanField()
-
-    Eating = models.NullBooleanField()
-
-    Foraging = models.NullBooleanField()
-
-    Other_Activities = models.CharField(
-            max_length=100,
+    latitude = models.FloatField(
+            blank= True
             )
 
-    Kuks = models.NullBooleanField()
+    longitude = models.FloatField(
+            blank = True
+            )
+    unique_id = models.CharField(
+            max_length = 100,
+            help_text = _('Unique id of the squirrel'),
+            )
+    PM = 'PM'
+    AM = 'AM'
 
-    Quaas = models.NullBooleanField()
+    shift_choice = [
+            (PM,'PM'),
+            (AM,'AM'),
+            ]
+    shift = models.CharField(
+            max_length = 16,
+            choices = shift_choice,
+            blank = True,
+            )
+    date = models.DateField(
+            help_text =_( 'Enter the date'),
+            )
+    Adult = 'Adult'
+    Juvenile = 'Juvenile'
 
-    Moans = models.NullBooleanField()
+    age_choice = [
+            (Adult,'Adult'),
+            (Juvenile,'Juvenile'),
+            ]
+    age = models.CharField(
+            max_length = 100,
+            choices = age_choice,
+            help_text = _('Select the age that it is closest to'),
+            blank = True,
+            )
+    Black = 'Black'
+    Gray = 'Gray'
+    Cinnamon = 'Cinnamon'
 
-    Tail_flags = models.NullBooleanField()
+    color_choice = [
+            (Black,'Black'),
+            (Gray,'Gray'),
+            (Cinnamon,'Cinnamon'),
+            ]
 
-    Tail_twitches = models.NullBooleanField()
 
-    Approaches = models.NullBooleanField()
+    primary_fur_color = models.CharField(
+            max_length = 100,
+            choices = color_choice,
+            help_text = _('Select the color it is closest to'),
+            blank = True,
+    
+        )
 
-    Indifferent= models.NullBooleanField()
+    Ground_plane = 'Ground Plane'
+    Above_ground = 'Above Ground'
 
-    Runs_from = models.NullBooleanField()
+    location_choices = [
+            (Ground_plane,'Ground Plane'),
+            (Above_ground,'Above Ground'),
+            ]
+    location = models.CharField(
+            max_length = 100,
+            choices = location_choices,
+            blank = True,
+            )
+    specific_location = models.TextField(
+            help_text = _('Please describe the specific location'),
+            blank = True,
+            )
+    TRUE = 'TRUE'
+    FALSE = 'FALSE'
+    choice_ls = [
+            (TRUE,'TRUE'),
+            (FALSE,'FALSE'),
+            ]
+    running = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    chasing = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    climbing = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    eating = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    foraging = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    other_activities = models.TextField(
+            help_text = _('Please describe other activity that it has'),
+            blank = True,
+            )
+    kuks = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    quaas = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    moans = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    tail_flags = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    tail_twitches = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    approaches = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    indifferent = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
+    runs_from = models.CharField(
+            max_length = 100,
+            choices = choice_ls,
+            blank = True,
+            )
 
     def __str__(self):
-        return self.Unique_Squirrel_ID
-
-    
+        return self.unique_id
