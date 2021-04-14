@@ -53,7 +53,9 @@ def stats(request):
     total_squirrel = Squirrel.objects.count()
     adult = Squirrel.objects.filter(age = 'Adult').count()
     juvenile = Squirrel.objects.filter(age = 'Juvenile').count()
-    primary_fur_color =list(Squirrel.objects.values_list('primary_fur_color').annotate(Count('primary_fur_color')))[1:]
+    black = Squirrel.objects.filter(primary_fur_color = 'black').count()
+    cinnamon = Squirrel.objects.filter(primary_fur_color = 'cinnamon').count()
+    gray = Squirrel.objects.filter(primary_fur_color = 'gray').count()
     am = Squirrel.objects.filter(shift = 'AM').count()
     pm = Squirrel.objects.filter(shift = 'PM').count()
     location_above = Squirrel.objects.filter(location='Above Ground').count()
@@ -66,7 +68,9 @@ def stats(request):
     context = {'total': total_squirrel,
                 'adult':adult,
                 'juvenile':juvenile,
-                'primary_fur_color': primary_fur_color,
+                'black':black,
+                'cinnamon':cinnamon,
+                'gray':gray,
                 'am':am,
                 'pm':pm,
                 'location_above': location_above,

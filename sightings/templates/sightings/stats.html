@@ -70,6 +70,31 @@
                 </div>
 		<br>
 		<br>
+		<div>
+                         <table class="table" id="color_table" style="width: 700px">
+                                 <div class="alert alert-success text-center" style="width: 700px" role="alert">
+                                        <h5><strong> Counts of squirrels by primary fur color </strong></h5>
+                                </div>
+                                 <thead class="thead-dark">
+                                         <tr>
+                                                 <th scope='col'></th>
+                                                 <th scope='col'>Black</th>
+                                                 <th scope='col'>Cinnamon</th>
+						 <th scope='col'>Gray</th>
+                                         </tr>
+                                         </thead>
+                                 <tbody>
+                                         <tr>
+                                                 <th>Color</th>
+                                                 <td>{{black}}</td>
+                                                 <td>{{cinnamon}}</td>
+						 <td>{{gray}}</td>
+                                         </tr>
+                                 </tbody>
+                         </table>
+                </div>
+                <br>
+                <br>
                 <div>
                          <table class='table' id="location_table" style="width: 700px">
 				 <div class="alert alert-warning text-center" style="width: 700px" role="alert">
@@ -116,13 +141,51 @@
                 </div>
 		<br>
       		<br>
-      		<li>Latitiude：The minimum latitude is {{latitude.minimum}}</li>
-      		<li>Latitiude：The maximum latitude is {{latitude.maximum}}</li>
+		<div>
+                        <table class='table' id="latitude_table" style="width: 700px">
+                                <div class="alert alert-primary text-center" style="width: 700px" role="alert">
+                                        <h5><strong> Latitude of sightings </strong></h5>
+                                </div>
+                                <thead class="thead-dark">
+                                         <tr>
+                                                 <th scope='col'></th>
+						 <th scope='col'>Minimum</th>
+                                                 <th scope='col'>Maximum</th>
+                                         </tr>
+                                 </thead>
+                                 <tbody>
+                                         <tr>
+                                                 <th>Latitude</th>
+						 <td>{{latitude.minimum}}</td>
+                                                 <td>{{latitude.maximum}}</td>
+                                         <tr>
+                                 </tbody>
+                         </table>
+                </div>
+		<br>
+		<br>
+		<div>
+                        <table class='table' id="longitude_table" style="width: 700px">
+                                <div class="alert alert-primary text-center" style="width: 700px" role="alert">
+                                        <h5><strong> Longitude of sightings </strong></h5>
+                                </div>
+                                <thead class="thead-dark">
+                                         <tr>
+                                                 <th scope='col'></th>
+                                                 <th scope='col'>Minimum</th>
+                                                 <th scope='col'>Maximum</th>
+                                         </tr>
+                                 </thead>
+                                 <tbody>
+                                         <tr>
+                                                 <th>Longitude</th>
+                                                 <td>{{longitude.minimum}}</td>
+                                                 <td>{{longitude.maximum}}</td>
+                                         <tr>
+                                 </tbody>
+                         </table>
+                </div>
       		<br>
-		<li>Longitude：The minimum longitude is {{longitude.minimum}}</li>
-      		<li>Longitude：The maximum longitude is {{longitude.maximum}}</li>
-      		<br>
-      		<li>Primary_fur_color: {{primary_fur_color}}</li></ul>
 		<br>
 	</body>
 </html>
