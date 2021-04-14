@@ -11,4 +11,4 @@ Our Web App **Squirrel_Tracker** is a simple tool that utilizes **Django** web d
 - UNIs: [xs2403, zc2575]
 
 ## Link to the Server Running the Application
-
+https://first-site-304104.uk.r.appspot.com/sightings/
